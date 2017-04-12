@@ -1,0 +1,29 @@
+
+JDBC URL Syntax - jdbc:<DriveName>://<target connection>/<DatabaseName>
+
+Spring Controller renders template
+@Controller vs @RequestMapping - See Code
+
+
+
+
+Difference between viewing in Spring(Localhost)
+    when using spring if the html file is the template folder you need to make sure you create a controller and
+    a @RequestMapping for that page with the url you would like it to be and the page that you would like to load.
+    doing it this way allows you to load the webite with data using addons like thymeleaf.
+
+    (if local network has ports open you could view application across the network locally)
+
+IntelliJ preview;
+    This method will still show it as local host but it cannot connect to any kind of java file. Unless you where using
+    javascript and you had a spring app running that  accepting requests to be made through things like a RestController
+    in example. other than that thymeleaf would be useless and would not be populate the page.
+
+    (Can not access and view over local network with out possible shared files)
+
+Direct file access
+    would allow you to do veiw little unless you where using JavaScript. Thymeleaf will wouldnt work.
+
+    (Can not access and view over local network with out shared files)
+
+

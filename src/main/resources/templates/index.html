@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8"/>
+	<title>Title</title>
+	<!--@{} allow you to call file paths when using things like th:href or th:src-->
+	<link rel="stylesheet" type="text/css" th:href="@{css/stylesheet.css}" href="css/stylesheet.css"/>
+</head>
+<body>
+<!--Runs js function property seems to not stay afterwards the ${} allows you to call the property name-->
+<h2 th:onclick="'newHead(\'' + ${action} + '\');'" th:id="${action}">Click here this Calls a Js function from thymeleaf</h2>
+
+<div class="container">
+	<div class="game-boarder">
+		<!--This is an example of how you would loop though an array that is an object
+		with properties-->
+		<div th:each="image : ${images}" class="flip-container content">
+			<div class="flippable">
+				<div class="front">
+
+					<label th:text="${push}">Click</label>
+				</div>
+				<div class="back">
+					<!--this is and example of setting item in an array list with properties
+					I am seeing the image name and the time of image-->
+					<img th:src="@{'/images/'+${image.imageName}+'.'+${image.fileType}}" src="images/java.svg"/>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script th:src="@{/js/app.js}" src="js/app.js"></script>
+</body>
+</html>
